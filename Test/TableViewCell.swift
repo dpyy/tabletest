@@ -10,6 +10,7 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
+
     @IBOutlet var hiddenCon: NSLayoutConstraint!
     override func awakeFromNib() {
         super.awakeFromNib()

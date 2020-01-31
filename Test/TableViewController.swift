@@ -32,7 +32,8 @@ class TableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 5
     }
-    var flag:Bool = false
+
+    var flag: Bool = false
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
@@ -41,20 +42,20 @@ class TableViewController: UITableViewController {
         if indexPath.row % 2 == 0 {
             cell.hiddenCon.isActive = flag
         } else {
-            cell.hiddenCon.isActive = flag
+            cell.hiddenCon.isActive = !flag
         }
 
-        
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //tableView.beginUpdates()
+//        tableView.beginUpdates()
         let cell = tableView.cellForRow(at: indexPath) as? TableViewCell
-        cell?.hiddenCon.isActive = !(cell?.hiddenCon.isActive)!
-        tableView.reloadRows(at: [indexPath], with: .none)
+        //cell?.hiddenCon.isActive = !((cell?.hiddenCon.isActive)!)
         flag = !flag
-        //tableView.endUpdates()
+        tableView.reloadRows(at: [indexPath], with: .none)
+        
+        //       tableView.endUpdates()
     }
 
 
