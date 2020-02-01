@@ -45,6 +45,7 @@ class TableViewController: UITableViewController {
             cell.hiddenCon.isActive = !flag
         }
 
+        cell.backgroundColor = .blue
         return cell
     }
 
