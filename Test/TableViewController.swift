@@ -30,14 +30,14 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return 25
     }
 
     var flag: Bool = false
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
-
+cell.selectionStyle = .gray
         // Configure the cell...
         if indexPath.row % 2 == 0 {
             cell.hiddenCon.isActive = flag
