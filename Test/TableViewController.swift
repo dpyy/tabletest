@@ -33,30 +33,28 @@ class TableViewController: UITableViewController {
         return 25
     }
 
-    var flag: Bool = false
+
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
-cell.selectionStyle = .gray
-        // Configure the cell...
-        if indexPath.row % 2 == 0 {
-            cell.hiddenCon.isActive = flag
-        } else {
-            cell.hiddenCon.isActive = !flag
+        cell.selectionStyle = .none
+
+        cell.tableUpdateCallback = {
+            tableView.beginUpdates()
+            tableView.endUpdates()
         }
 
-        cell.backgroundColor = .blue
+
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.beginUpdates()
+
         let cell = tableView.cellForRow(at: indexPath) as? TableViewCell
-        //cell?.hiddenCon.isActive = !((cell?.hiddenCon.isActive)!)
-        flag = !flag
-        tableView.reloadRows(at: [indexPath], with: .none)
+
         
-        //       tableView.endUpdates()
+        cell?.grow()
+
     }
 
 
