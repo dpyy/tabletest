@@ -27,20 +27,6 @@ class TableViewCell: UITableViewCell {
         case .visible:
             theTextView.alpha = 1
             hiddenCon.constant = 100
-
-        case .hiding:
-            theTextView.alpha = 1
-            hiddenCon.constant = 0
-            UIView.animate(withDuration: 0.25, delay: 0, options: .allowUserInteraction, animations: {
-                self.theTextView.alpha = 0
-            })
-
-        case .unhiding:
-            theTextView.alpha = 0
-            hiddenCon.constant = 100
-            UIView.animate(withDuration: 0.25, delay: 0, options: .allowUserInteraction, animations: {
-                self.theTextView.alpha = 1
-            })
         }
     }
 }
