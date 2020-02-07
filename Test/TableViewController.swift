@@ -63,7 +63,7 @@ extension TableViewController {
             objects[indexPath.row].state = .hiding
         }
 
-        tableView.reloadRows(at: [indexPath], with: .fade)
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
 
 }

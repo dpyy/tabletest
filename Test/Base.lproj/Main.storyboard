@@ -25,6 +25,13 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qMf-mM-hae">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="133.5"/>
                                             <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjq-TD-awT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
+                                                    <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" id="0Lc-Md-ak5"/>
+                                                    </constraints>
+                                                </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="pje-Jj-U3F">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="33.5"/>
                                                     <subviews>
@@ -73,6 +80,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="buttonCon" destination="0Lc-Md-ak5" id="Z9R-6L-zas"/>
                                     <outlet property="hiddenCon" destination="1DY-SL-cEY" id="6fs-3D-MQX"/>
                                     <outlet property="theTextView" destination="ae4-Wa-ZK8" id="jkG-wo-bLF"/>
                                 </connections>
