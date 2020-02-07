@@ -11,8 +11,10 @@ import UIKit
 enum HiddenState {
     case hidden
     case visible
-    case hiding
-    case unhiding
+
+    mutating func toggle() {
+        self = self == .hidden ? .visible : .hidden
+    }
 }
 
 struct MyObject {
@@ -40,12 +42,6 @@ extension TableViewController {
 
         cell.configure(for: state)
 
-        switch state {
-        case .hiding: objects[indexPath.row].state = .hidden
-        case .unhiding: objects[indexPath.row].state = .visible
-        default: break
-        }
-
         return cell
     }
 }
@@ -55,13 +51,7 @@ extension TableViewController {
 extension TableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch objects[indexPath.row].state {
-        case .hidden, .hiding:
-            objects[indexPath.row].state = .unhiding
-
-        case .visible, .unhiding:
-            objects[indexPath.row].state = .hiding
-        }
+        objects[indexPath.row].state.toggle()
 
         tableView.reloadRows(at: [indexPath], with: .fade)
     }
